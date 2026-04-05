@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="header-toolbar">
+	<!-- Logo e nome -->
+	<div class="header-left" style="display: flex; align-items: center;">
+		<img src="assets/logo.png" alt="Logo" class="header-logo" style="height:32px; margin-right:8px;">
+		<span class="header-title" style="font-weight: 500; font-size: 20px;">educative</span>
+	</div>
+	<span class="spacer" style="flex: 1 1 auto;"></span>
+	<!-- Notificação e usuário -->
+	<div class="header-right" style="display: flex; align-items: center;">
+		<button mat-icon-button aria-label="Notificações" style="position: relative;">
+			<mat-icon>notifications</mat-icon>
+			<span class="notification-badge" style="position: absolute; top: 8px; right: 8px; background: red; color: white; border-radius: 50%; width: 16px; height: 16px; font-size: 10px; display: flex; align-items: center; justify-content: center;">1</span>
+		</button>
+		<button mat-button [matMenuTriggerFor]="userMenu" style="margin-left: 8px;">
+			<img src="assets/user.jpg" alt="Avatar" class="header-avatar" style="height:32px; width:32px; border-radius:50%; margin-right:8px;">
+			Professor
+			<mat-icon>expand_more</mat-icon>
+		</button>
+		<mat-menu #userMenu="matMenu">
+			<button mat-menu-item>Sair</button>
+		</mat-menu>
+	</div>
+</mat-toolbar>
