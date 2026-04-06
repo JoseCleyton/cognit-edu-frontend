@@ -1,0 +1,88 @@
+<div class="teacher-dashboard">
+  <div class="header-row">
+    <img src="assets/logo.svg" alt="educative" class="logo" />
+    <div class="profile-info">
+      <mat-icon>notifications</mat-icon>
+      <span>Professor</span>
+      <img src="assets/professor.jpg" alt="Avatar" class="avatar" />
+    </div>
+  </div>
+
+  <h2 class="dashboard-title">Portal do Professor - Análise da Turma 9º B</h2>
+
+  <div class="dashboard-row">
+    <!-- Resumo da Prova -->
+    <mat-card class="summary-card">
+      <div class="summary-title">Resumo da Prova: Álgebra</div>
+      <div class="summary-stats">
+        <div>
+          <div class="stat-label">Média Geral:</div>
+          <div class="stat-value">6.8</div>
+        </div>
+        <div>
+          <div class="stat-label">Alunos na Média:</div>
+          <div class="stat-value">18/22</div>
+        </div>
+        <div>
+          <div class="stat-label">Alunos em Risco:</div>
+          <div class="stat-value risk">4</div>
+        </div>
+      </div>
+    </mat-card>
+
+    <!-- Desempenho por Tópico -->
+    <mat-card class="performance-card">
+      <div class="performance-title">Desempenho por Tópico</div>
+      <canvas
+        baseChart
+        [data]="barChartData"
+        [labels]="barChartLabels"
+        [type]="'bar'"
+        [options]="barChartOptions"
+      >
+      </canvas>
+    </mat-card>
+
+    <!-- Alunos em Destaque -->
+    <mat-card class="students-card">
+      <div class="students-title">Alunos em Destaque (Reforço)</div>
+      <div class="students-list">
+        @for (student of students; track $index) {
+          <div class="student-row">
+            <img [src]="student.avatar" alt="Avatar" class="student-avatar" />
+            <span class="student-name">{{ student.name }}</span>
+            <span class="student-score">{{ student.score }}</span>
+            <span class="student-status">Necessita Reforço</span>
+          </div>
+        }
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="dashboard-row">
+    <!-- AI Insights -->
+    <mat-card class="ai-card">
+      <div class="ai-content">
+        <mat-icon class="ai-icon">psychology</mat-icon>
+        <div>
+          <div class="ai-title">AI Insights & Recomendações</div>
+          <div class="ai-description">
+            A IA identificou dificuldade recorrente (80% dos alunos) na identificação de raízes em Equações de 2º Grau (Método de Bhaskara).<br />
+            <b>Sugestão de Reforço Imediato:</b> Vídeo curto "Bhaskara
+            Simplificado" e Lista de Exercícios 03.
+          </div>
+          <div class="ai-actions">
+            <button mat-stroked-button color="primary">Ver Vídeo</button>
+            <button mat-stroked-button color="primary">Gerar Lista</button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <div class="plan-btn-container">
+      <button mat-raised-button color="primary" class="plan-btn">
+        <mat-icon>auto_stories</mat-icon>
+        Gerar Plano de Aula de Recuperação - Tópico: Bhaskara
+      </button>
+    </div>
+  </div>
+</div>

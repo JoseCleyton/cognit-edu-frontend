@@ -1,0 +1,89 @@
+<div class="student-dashboard">
+  <!-- Saudação e Fogo de Estudos -->
+  <mat-card class="greeting-card">
+    <div class="greeting-header">
+      <div>
+        <span class="greeting-title">Olá, Ana S.!</span>
+        <div class="study-streak">
+          <mat-icon color="warn">whatshot</mat-icon>
+          <span class="streak-days"><b>12 Dias Seguidos!</b></span>
+        </div>
+        <div class="achievement">
+          Última Conquista: Mestre de Álgebra (80%)
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="dashboard-row">
+    <!-- Evolução (Radar) -->
+    <mat-card class="evolution-card">
+      <div class="section-title">Minha Evolução (Habilidades)</div>
+      <canvas baseChart
+        [data]="radarChartData"
+        [labels]="radarChartLabels"
+        [type]="'radar'"
+        [options]="radarChartOptions">
+      </canvas>
+      <div class="legend">
+        <span class="legend-item"><span class="legend-color nivel"></span> Meu Nível Atual</span>
+        <span class="legend-item"><span class="legend-color turma"></span> Objetivo da Turma</span>
+      </div>
+    </mat-card>
+
+    <!-- Badges -->
+    <mat-card class="badges-card">
+      <div class="section-title">Minhas Conquistas (Badges)</div>
+      <div class="badges-list">
+        @for (badge of badges; track $index) {
+          <mat-icon [class]="{'badge-earned': badge.earned, 'badge-locked': !badge.earned}">
+            {{ badge.icon }}
+          </mat-icon>
+        }
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Trilha de Recuperação -->
+  <mat-card class="recovery-track-card">
+    <div class="section-title">Minha Trilha de Recuperação (Matemática)</div>
+    <div class="track-steps">
+      <div class="track-step">
+        <mat-icon color="primary">play_circle</mat-icon>
+        <div>Vídeo: Bhaskara Simplificado</div>
+        <mat-icon color="primary">check_circle</mat-icon>
+      </div>
+      <mat-icon>arrow_forward</mat-icon>
+      <div class="track-step">
+        <mat-icon color="primary">quiz</mat-icon>
+        <div>Quiz Rápido</div>
+        <mat-icon color="primary">check_circle</mat-icon>
+      </div>
+      <mat-icon>arrow_forward</mat-icon>
+      <div class="track-step locked">
+        <mat-icon color="warn">lock</mat-icon>
+        <div>Desbloquear: Desafio Nível 2</div>
+      </div>
+      <button mat-raised-button color="primary" class="continue-btn">Continuar Trilha</button>
+    </div>
+  </mat-card>
+
+  <!-- Feedback do Professor -->
+  <mat-card class="feedback-card">
+    <div class="section-title">Feedback do Prof.</div>
+    <div class="feedback-content">
+      <div class="prof-info">
+        <mat-icon>person</mat-icon>
+        <span><b>Prof. Roberto (Matemática)</b></span>
+      </div>
+      <div class="prof-message">
+        Parabéns pela evolução em Bhaskara, Ana! Continue assim. 🎉
+      </div>
+      <mat-divider></mat-divider>
+      <div class="prof-notification">
+        <mat-icon>info</mat-icon>
+        Nova prova de Física disponível
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,180 @@
+.student-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 40px 32px 40px;
+  background: #f6f8fa;
+  min-height: 100vh;
+}
+
+.greeting-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-radius: 16px;
+  padding: 24px 32px;
+  width: fit-content;
+  margin-bottom: -40px;
+  z-index: 2;
+  position: relative;
+  .greeting-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .study-streak {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+    color: #ff9800;
+    font-weight: 600;
+  }
+  .achievement {
+    font-size: 1rem;
+    color: #388e3c;
+    margin-top: 2px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.dashboard-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.evolution-card, .badges-card {
+  flex: 1 1 340px;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px 24px 16px 24px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.98rem;
+  }
+  .legend-color.nivel {
+    width: 16px; height: 8px; background: #43a047; display: inline-block; border-radius: 2px;
+  }
+  .legend-color.turma {
+    width: 16px; height: 8px; background: #ffb300; display: inline-block; border-radius: 2px;
+  }
+}
+
+.badges-list {
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  gap: 12px;
+  justify-content: start;
+  .badge-earned {
+    color: #43a047;
+    font-size: 32px;
+    border: 2px solid #43a047;
+    border-radius: 50%;
+    background: #e8f5e9;
+    padding: 4px;
+  }
+  .badge-locked {
+    color: #bdbdbd;
+    font-size: 32px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    background: #f5f5f5;
+    padding: 4px;
+  }
+}
+
+.recovery-track-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px 32px;
+  .track-steps {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+    .track-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1rem;
+      min-width: 120px;
+      &.locked {
+        opacity: 0.5;
+      }
+      mat-icon {
+        font-size: 32px;
+        margin-bottom: 4px;
+      }
+    }
+    .continue-btn {
+      margin-left: 32px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      padding: 8px 24px;
+    }
+  }
+}
+
+.feedback-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 20px 28px;
+  .feedback-content {
+    .prof-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .prof-message {
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+    }
+    .prof-notification {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .evolution-card, .badges-card {
+    min-width: unset;
+    width: 100%;
+  }
+}

@@ -1,1 +1,7 @@
-<p>home works!</p>
+@if (profile === "teacher") {
+  <app-teacher></app-teacher>
+} @else if (profile === "manager") {
+  <app-manager></app-manager>
+} @else if (profile === "student") {
+  <app-student></app-student>
+}
