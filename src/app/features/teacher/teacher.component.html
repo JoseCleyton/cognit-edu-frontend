@@ -1,12 +1,12 @@
 <div class="teacher-dashboard">
-  <div class="header-row">
+  <!-- <div class="header-row">
     <img src="assets/logo.svg" alt="educative" class="logo" />
     <div class="profile-info">
       <mat-icon>notifications</mat-icon>
       <span>Professor</span>
       <img src="assets/professor.jpg" alt="Avatar" class="avatar" />
     </div>
-  </div>
+  </div> -->
 
   <h2 class="dashboard-title">Portal do Professor - Análise da Turma 9º B</h2>
 
@@ -49,7 +49,8 @@
       <div class="students-list">
         @for (student of students; track $index) {
           <div class="student-row">
-            <img [src]="student.avatar" alt="Avatar" class="student-avatar" />
+            <mat-icon>account_circle</mat-icon>
+            <!-- <img [src]="student.avatar" alt="Avatar" class="student-avatar" /> -->
             <span class="student-name">{{ student.name }}</span>
             <span class="student-score">{{ student.score }}</span>
             <span class="student-status">Necessita Reforço</span>

@@ -11,5 +11,5 @@ import { TeacherComponent } from '../../features/teacher/teacher.component';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  profile = 'teacher';
+  profile = 'manager';
 }

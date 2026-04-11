@@ -37,3 +37,33 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Estilo global para todos os mat-form-field
+mat-form-field {
+  .mdc-text-field {
+    background-color: transparent !important;
+  }
+  
+  .mdc-notched-outline {
+    display: none !important;
+  }
+  
+  .mdc-line-ripple::after {
+    border-bottom: 2px solid #7a9fd6 !important;
+  }
+  
+  .mdc-line-ripple {
+    height: 2px;
+  }
+}
+
+// Cor do texto em fields azuis
+.filters-row mat-form-field {
+  .mdc-select__selected-text {
+    color: #fff !important;
+  }
+  
+  .mdc-select__dropdown-icon {
+    color: #fff !important;
+  }
+}
